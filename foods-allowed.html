@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>מאכלים מותרים — DogCare</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+      background-color: #f4f6f4;
+      min-height: 100vh;
+    }
+
+    /* ===== NAVBAR ===== */
+    nav {
+  background: #ffffff;
+  border-bottom: 1px solid #dde5dd;
+  padding: 0.75rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-logo {
+  font-size: 16px;
+  font-weight: 600;
+  color: #4a7c59;
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+.nav-links a {
+  font-weight: 500;
+  font-size: 15px;
+  color: #5a6e5a;
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: #4a7c59;
+  font-weight: 600;
+}
+
+.nav-avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid #c8d5c8;
+  cursor: pointer;
+}
+
+    /* ===== PAGE HEADER ===== */
+    .page-header {
+      text-align: center;
+      padding: 2rem 1rem 1rem;
+    }
+
+    .page-header h1 {
+      font-size: 22px;
+      font-weight: 700;
+      color: #1e2d1e;
+      margin-bottom: 0.35rem;
+    }
+
+    .page-header p {
+      font-size: 13px;
+      color: #6b7c6b;
+    }
+
+    /* ===== CATEGORY FILTERS ===== */
+    .filters {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      padding: 1rem 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      padding: 7px 18px;
+      font-size: 13px;
+      border: 1px solid #c8d5c8;
+      border-radius: 20px;
+      background: #ffffff;
+      color: #5a6e5a;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.15s, border-color 0.15s, color 0.15s;
+      font-family: inherit;
+    }
+
+    .filter-btn:hover {
+      border-color: #4a7c59;
+      color: #4a7c59;
+    }
+
+    .filter-btn.active {
+      background: #4a7c59;
+      border-color: #4a7c59;
+      color: #ffffff;
+    }
+
+    /* ===== FOODS GRID ===== */
+    .foods-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 14px;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 1rem 1.5rem 3rem;
+    }
+
+    .food-card {
+      background: #ffffff;
+      border: 1px solid #dde5dd;
+      border-radius: 12px;
+      padding: 1.25rem 1rem;
+      text-align: center;
+      text-decoration: none;
+      transition: box-shadow 0.15s, border-color 0.15s;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .food-card:hover {
+      border-color: #4a7c59;
+      box-shadow: 0 2px 12px rgba(74,124,89,0.1);
+    }
+
+    .food-card .food-icon {
+      font-size: 32px;
+    }
+
+    .food-card .food-name {
+      font-size: 14px;
+      font-weight: 500;
+      color: #1e2d1e;
+    }
+
+    .food-card .food-category {
+      font-size: 11px;
+      color: #9aaa9a;
+      background: #f4f6f4;
+      padding: 2px 10px;
+      border-radius: 10px;
+    }
+
+
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <a href="index.html" class="nav-logo">🐾 DogCare</a>
+    <ul class="nav-links">
+      <li><a href="foods-allowed.html" class="active">מאכלים מותרים</a></li>
+      <li><a href="foods-forbidden.html">מאכלים אסורים</a></li>
+      <li><a href="supplements.html">חטיפים ותוספים</a></li>
+      <li><a href="vets.html">וטרינרים</a></li>
+      <li><a href="emergency.html">חירום</a></li>
+    </ul>
+    <img class="nav-avatar" src="https://i.pravatar.cc/100" alt="תמונת פרופיל" />
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <h1>🥦 מאכלים מותרים לכלבים</h1>
+    <p>כל המאכלים שבטוחים לכלב שלך — לחץ על מאכל לפרטים נוספים</p>
+  </div>
+
+  <!-- CATEGORY FILTERS -->
+  <div class="filters">
+    <button class="filter-btn active">הכל</button>
+    <button class="filter-btn">🥦 ירקות</button>
+    <button class="filter-btn">🍎 פירות</button>
+    <button class="filter-btn">🌾 דגנים</button>
+    <button class="filter-btn">🥩 חלבונים</button>
+  </div>
+
+  <!-- FOODS GRID -->
+  <div class="foods-grid">
+
+    <a href="food-detail.html" class="food-card">
+      <span class="food-icon">🥕</span>
+      <p class="food-name">גזר</p>
+      <span class="food-category">ירק</span>
+    </a>
+
+    <a href="food-detail.html" class="food-card">
+      <span class="food-icon">🍎</span>
+      <p class="food-name">תפוח</p>
+      <span class="food-category">פרי</span>
+    </a>
+
+    <a href="food-detail.html" class="food-card">
+      <span class="food-icon">🥒</span>
+      <p class="food-name">מלפפון</p>
+      <span class="food-category">ירק</span>
+    </a>
+
+    <a href="food-detail.html" class="food-card">
+      <span class="food-icon">🍌</span>
+      <p class="food-name">בננה</p>
+      <span class="food-category">פרי</span>
+    </a>
+
+    <a href="food-detail.html" class="food-card">
+      <span class="food-icon">🍓</span>
+      <p class="food-name">תות שדה</p>
+      <span class="food-category">פרי</span>
+    </a>
+
+    <a href="food-detail.html" class="food-card">
+      <span class="food-icon">🌾</span>
+      <p class="food-name">שיבולת שועל</p>
+      <span class="food-category">דגן</span>
+    </a>
+
+    <a href="food-detail.html" class="food-card">
+      <span class="food-icon">🥦</span>
+      <p class="food-name">ברוקולי</p>
+      <span class="food-category">ירק</span>
+    </a>
+
+    <a href="food-detail.html" class="food-card">
+      <span class="food-icon">🍠</span>
+      <p class="food-name">בטטה</p>
+      <span class="food-category">ירק</span>
+    </a>
+
+    <a href="food-detail.html" class="food-card">
+      <span class="food-icon">🍚</span>
+      <p class="food-name">אורז לבן</p>
+      <span class="food-category">דגן</span>
+    </a>
+
+  </div>
+
+</body>
+</html>
