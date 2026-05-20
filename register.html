@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>הרשמה — DogCare</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+      background-color: #f4f6f4;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1rem;
+    }
+
+    .card {
+      background: #ffffff;
+      border: 1px solid #dde5dd;
+      border-radius: 14px;
+      padding: 2rem;
+      width: 100%;
+      max-width: 420px;
+    }
+
+    .logo-wrap {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .logo-circle {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: #eaf0ec;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 0.75rem;
+      font-size: 24px;
+    }
+
+    .logo-wrap h1 {
+      font-size: 17px;
+      font-weight: 600;
+      color: #1e2d1e;
+      margin-bottom: 4px;
+    }
+
+    .logo-wrap p {
+      font-size: 13px;
+      color: #6b7c6b;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    label {
+      font-size: 13px;
+      color: #5a6e5a;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    label .optional {
+      font-size: 11px;
+      color: #9aaa9a;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      padding: 9px 12px;
+      font-size: 14px;
+      border: 1px solid #c8d5c8;
+      border-radius: 8px;
+      background: #ffffff;
+      color: #1e2d1e;
+      outline: none;
+      transition: border-color 0.15s;
+      font-family: inherit;
+    }
+
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    input[type="password"]:focus {
+      border-color: #4a7c59;
+    }
+
+    .upload-zone {
+      border: 1px dashed #c8d5c8;
+      border-radius: 8px;
+      padding: 1rem;
+      text-align: center;
+      cursor: pointer;
+      background: #f8faf8;
+      transition: border-color 0.15s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .upload-zone:hover {
+      border-color: #4a7c59;
+    }
+
+    .upload-zone .upload-icon {
+      font-size: 20px;
+    }
+
+    .upload-zone p {
+      font-size: 12px;
+      color: #6b7c6b;
+    }
+
+    input[type="file"] {
+      display: none;
+    }
+
+    .submit-btn {
+      width: 100%;
+      margin-top: 4px;
+      padding: 11px;
+      background: #4a7c59;
+      color: #ffffff;
+      border: none;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: inherit;
+      transition: background 0.15s;
+    }
+
+    .submit-btn:hover {
+      background: #3d6b4a;
+    }
+
+    .submit-btn:active {
+      transform: scale(0.98);
+    }
+
+    .footer-link {
+      text-align: center;
+      font-size: 13px;
+      color: #6b7c6b;
+    }
+
+    .footer-link a {
+      color: #4a7c59;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .footer-link a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+
+    <div class="logo-wrap">
+      <div class="logo-circle">🐾</div>
+      <h1>הרשמה ל-DogCare</h1>
+      <p>צרו חשבון חדש</p>
+    </div>
+
+    <div class="form-group">
+
+      <div class="field">
+        <label for="name">👤 שם מלא *</label>
+        <input type="text" id="name" placeholder="ישראל ישראלי" />
+      </div>
+
+      <div class="field">
+        <label for="email">✉️ אימייל *</label>
+        <input type="email" id="email" placeholder="example@email.com" />
+      </div>
+
+      <div class="field">
+        <label for="password">🔒 סיסמה *</label>
+        <input type="password" id="password" placeholder="לפחות 6 תווים" />
+      </div>
+
+      <div class="field">
+        <label for="dogname">🐶 שם הכלב <span class="optional">(אופציונלי)</span></label>
+        <input type="text" id="dogname" placeholder="רקסי, בוקסר..." />
+      </div>
+
+      <div class="field">
+        <label>📷 תמונת פרופיל <span class="optional">(אופציונלי)</span></label>
+        <label for="avatar" class="upload-zone">
+          <span class="upload-icon">⬆</span>
+          <p>לחצו להעלאת תמונה</p>
+        </label>
+        <input type="file" id="avatar" accept="image/*" />
+      </div>
+
+      <button class="submit-btn">הרשמה</button>
+
+      <p class="footer-link">
+        כבר רשום? <a href="login.html">התחבר כאן</a>
+      </p>
+
+    </div>
+  </div>
+
+</body>
+</html>

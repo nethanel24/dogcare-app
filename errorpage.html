@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>דף לא נמצא — DogCare</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+      background-color: #f4f6f4;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ===== NAVBAR ===== */
+    nav {
+  background: #ffffff;
+  border-bottom: 1px solid #dde5dd;
+  padding: 0.75rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-logo {
+  font-size: 16px;
+  font-weight: 600;
+  color: #4a7c59;
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+.nav-links a {
+  font-weight: 500;
+  font-size: 15px;
+  color: #5a6e5a;
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: #4a7c59;
+  font-weight: 600;
+}
+
+.nav-avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid #c8d5c8;
+  cursor: pointer;
+}
+    /* ===== NOT FOUND CONTENT ===== */
+    .not-found-container {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 3rem 1.5rem;
+      gap: 1.25rem;
+    }
+
+    .not-found-icon {
+      font-size: 72px;
+    }
+
+    .not-found-code {
+      font-size: 80px;
+      font-weight: 700;
+      color: #dde5dd;
+      line-height: 1;
+    }
+
+    .not-found-title {
+      font-size: 22px;
+      font-weight: 600;
+      color: #1e2d1e;
+    }
+
+    .not-found-desc {
+      font-size: 14px;
+      color: #6b7c6b;
+      max-width: 380px;
+      line-height: 1.6;
+    }
+
+    .home-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 0.5rem;
+      padding: 11px 24px;
+      background: #4a7c59;
+      color: #ffffff;
+      border: none;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      font-family: inherit;
+      transition: background 0.15s;
+    }
+
+    .home-btn:hover {
+      background: #3d6b4a;
+    }
+
+    .secondary-links {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 0.25rem;
+    }
+
+    .secondary-links a {
+      font-size: 13px;
+      color: #4a7c59;
+      text-decoration: none;
+    }
+
+    .secondary-links a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <a href="index.html" class="nav-logo">🐾 DogCare</a>
+    <ul class="nav-links">
+      <li><a href="foods-allowed.html">מאכלים מותרים</a></li>
+      <li><a href="foods-forbidden.html">מאכלים אסורים</a></li>
+      <li><a href="supplements.html">חטיפים ותוספים</a></li>
+      <li><a href="vets.html">וטרינרים</a></li>
+      <li><a href="emergency.html">חירום</a></li>
+    </ul>
+    <img class="nav-avatar" src="https://i.pravatar.cc/100" alt="תמונת פרופיל" />
+  </nav>
+
+  <!-- NOT FOUND CONTENT -->
+  <div class="not-found-container">
+    <span class="not-found-icon">🐾</span>
+    <p class="not-found-code">404</p>
+    <h1 class="not-found-title">אופס! הדף לא נמצא</h1>
+    <p class="not-found-desc">
+      הדף שחיפשת לא קיים או הוסר.
+    </p>
+    <a href="index.html" class="home-btn">🏠 חזרה לדף הבית</a>
+    <div class="secondary-links">
+      <a href="foods-allowed.html">מאכלים מותרים</a>
+      <a href="vets.html">וטרינרים</a>
+      <a href="emergency.html">חירום</a>
+    </div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>פרטי מאכל — DogCare</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+      background-color: #f4f6f4;
+      min-height: 100vh;
+    }
+
+    /* ===== NAVBAR ===== */
+    nav {
+  background: #ffffff;
+  border-bottom: 1px solid #dde5dd;
+  padding: 0.75rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-logo {
+  font-size: 16px;
+  font-weight: 600;
+  color: #4a7c59;
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+.nav-links a {
+  font-weight: 500;
+  font-size: 15px;
+  color: #5a6e5a;
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: #4a7c59;
+  font-weight: 600;
+}
+
+.nav-avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid #c8d5c8;
+  cursor: pointer;
+}
+
+    /* ===== BACK LINK ===== */
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 13px;
+      color: #4a7c59;
+      text-decoration: none;
+      padding: 1.25rem 1.5rem 0;
+      max-width: 700px;
+      margin: 0 auto;
+      display: block;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
+    }
+
+    /* ===== DETAIL CARD ===== */
+    .detail-wrapper {
+      max-width: 700px;
+      margin: 1rem auto 3rem;
+      padding: 0 1.5rem;
+    }
+
+    .detail-card {
+      background: #ffffff;
+      border: 1px solid #dde5dd;
+      border-radius: 14px;
+      overflow: hidden;
+    }
+
+    /* ===== FOOD HEADER ===== */
+    .food-header {
+      background: #eaf0ec;
+      padding: 2rem;
+      text-align: center;
+      border-bottom: 1px solid #dde5dd;
+    }
+
+    .food-header .food-icon {
+      font-size: 56px;
+      display: block;
+      margin-bottom: 0.75rem;
+    }
+
+    .food-header h1 {
+      font-size: 22px;
+      font-weight: 700;
+      color: #1e2d1e;
+      margin-bottom: 0.35rem;
+    }
+
+    .food-header .food-category-badge {
+      display: inline-block;
+      font-size: 12px;
+      background: #ffffff;
+      border: 1px solid #c8d5c8;
+      color: #5a6e5a;
+      padding: 3px 12px;
+      border-radius: 12px;
+    }
+
+    /* ===== DETAIL SECTIONS ===== */
+    .detail-body {
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .detail-section {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .detail-section .section-label {
+      font-size: 12px;
+      font-weight: 600;
+      color: #9aaa9a;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .detail-section .section-value {
+      font-size: 14px;
+      color: #1e2d1e;
+      line-height: 1.6;
+    }
+
+    /* ===== RISK LEVEL ===== */
+    .risk-indicator {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .risk-badge {
+      font-size: 12px;
+      font-weight: 600;
+      padding: 4px 14px;
+      border-radius: 12px;
+    }
+
+    .risk-badge.safe {
+      background: #eaf0ec;
+      color: #3d6b4a;
+    }
+
+    .risk-badge.medium {
+      background: #fef3e2;
+      color: #8a5c00;
+    }
+
+    .risk-badge.high {
+      background: #fde8e8;
+      color: #a32d2d;
+    }
+
+    /* ===== AMOUNT BOX ===== */
+    .amount-box {
+      background: #f4f6f4;
+      border-radius: 10px;
+      padding: 0.9rem 1rem;
+      font-size: 14px;
+      color: #3d6b4a;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+
+
+    /* ===== DIVIDER ===== */
+    .divider {
+      border: none;
+      border-top: 1px solid #dde5dd;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <a href="index.html" class="nav-logo">🐾 DogCare</a>
+    <ul class="nav-links">
+      <li><a href="foods-allowed.html">מאכלים מותרים</a></li>
+      <li><a href="foods-forbidden.html">מאכלים אסורים</a></li>
+      <li><a href="supplements.html">המלצות</a></li>
+      <li><a href="vets.html">וטרינרים</a></li>
+      <li><a href="emergency.html">חירום</a></li>
+    </ul>
+    <img class="nav-avatar" src="https://i.pravatar.cc/100" alt="תמונת פרופיל" />
+  </nav>
+
+  <!-- BACK LINK -->
+  <a href="foods-allowed.html" class="back-link">← חזרה לרשימת המאכלים</a>
+
+  <!-- DETAIL CARD -->
+  <div class="detail-wrapper">
+    <div class="detail-card">
+
+      <!-- FOOD HEADER -->
+      <div class="food-header">
+        <span class="food-icon">🥕</span>
+        <h1>גזר</h1>
+        <span class="food-category-badge">ירק</span>
+      </div>
+
+      <!-- DETAIL BODY -->
+      <div class="detail-body">
+
+        <div class="detail-section">
+          <span class="section-label">רמת סיכון</span>
+          <div class="risk-indicator">
+            <span class="risk-badge safe">בטוח לאכילה</span>
+          </div>
+        </div>
+
+        <hr class="divider" />
+
+        <div class="detail-section">
+          <span class="section-label">כמות מומלצת</span>
+          <div class="amount-box">
+            🥄 2-3 פרוסות ביום — לא יותר מ-10% מהמנה היומית
+          </div>
+        </div>
+
+        <hr class="divider" />
+
+        <div class="detail-section">
+          <span class="section-label">הסבר</span>
+          <p class="section-value">
+            גזר הוא ירק מצוין לכלבים — דל קלוריות, עשיר בוויטמין A וסיבים תזונתיים.
+            ניתן לתת אותו חי או מבושל. גזר חי עוזר גם לניקוי השיניים.
+            יש לחתוך לחתיכות קטנות כדי למנוע סכנת חנק.
+          </p>
+        </div>
+
+        <hr class="divider" />
+
+        <div class="detail-section">
+          <span class="section-label">יתרונות</span>
+          <p class="section-value">
+            ✓ עשיר בוויטמין A ובטא-קרוטן<br/>
+            ✓ דל קלוריות — מתאים כחטיף<br/>
+            ✓ עוזר לבריאות העיניים<br/>
+            ✓ תורם לניקוי השיניים
+          </p>
+        </div>
+
+
+
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

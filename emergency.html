@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>פעולות חירום — DogCare</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+      background-color: #f4f6f4;
+      min-height: 100vh;
+    }
+
+    /* ===== NAVBAR ===== */
+    nav {
+  background: #ffffff;
+  border-bottom: 1px solid #dde5dd;
+  padding: 0.75rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-logo {
+  font-size: 16px;
+  font-weight: 600;
+  color: #4a7c59;
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+.nav-links a {
+  font-weight: 500;
+  font-size: 15px;
+  color: #5a6e5a;
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: #4a7c59;
+  font-weight: 600;
+}
+
+.nav-avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid #c8d5c8;
+  cursor: pointer;
+}
+    /* ===== PAGE HEADER ===== */
+    .page-header {
+      text-align: center;
+      padding: 2rem 1rem 1.5rem;
+    }
+
+    .page-header h1 {
+      font-size: 22px;
+      font-weight: 700;
+      color: #1e2d1e;
+      margin-bottom: 0.35rem;
+    }
+
+    .page-header p {
+      font-size: 13px;
+      color: #6b7c6b;
+    }
+
+    /* ===== CONTENT WRAPPER ===== */
+    .content-wrapper {
+      max-width: 750px;
+      margin: 0 auto;
+      padding: 0 1.5rem 3rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    /* ===== ALERT BANNER ===== */
+    .alert-banner {
+      background: #fde8e8;
+      border: 1px solid #f5c6c6;
+      border-radius: 12px;
+      padding: 1rem 1.25rem;
+      text-align: center;
+      font-size: 14px;
+      color: #a32d2d;
+      font-weight: 500;
+    }
+
+    .alert-banner a {
+      color: #a32d2d;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .alert-banner a:hover {
+      text-decoration: underline;
+    }
+
+    /* ===== STEP CARD ===== */
+    .step-card {
+      background: #ffffff;
+      border: 1px solid #dde5dd;
+      border-radius: 12px;
+      padding: 1.25rem 1.5rem;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 1rem;
+      align-items: start;
+    }
+
+    .step-number {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: #eaf0ec;
+      color: #3d6b4a;
+      font-size: 16px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .step-content {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .step-title {
+      font-size: 15px;
+      font-weight: 600;
+      color: #1e2d1e;
+    }
+
+    .step-desc {
+      font-size: 13px;
+      color: #6b7c6b;
+      line-height: 1.6;
+    }
+
+    .step-warning {
+      font-size: 12px;
+      color: #a32d2d;
+      background: #fff5f5;
+      border-radius: 6px;
+      padding: 5px 10px;
+      margin-top: 4px;
+    }
+
+
+
+    /* ===== VETS LINK ===== */
+    .vets-link {
+      text-align: center;
+      font-size: 13px;
+      color: #6b7c6b;
+    }
+
+    .vets-link a {
+      color: #4a7c59;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .vets-link a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <a href="index.html" class="nav-logo">🐾 DogCare</a>
+    <ul class="nav-links">
+      <li><a href="foods-allowed.html">מאכלים מותרים</a></li>
+      <li><a href="foods-forbidden.html">מאכלים אסורים</a></li>
+      <li><a href="supplements.html">חטיפים ותוספים</a></li>
+      <li><a href="vets.html">וטרינרים</a></li>
+      <li><a href="emergency.html" class="active">חירום</a></li>
+    </ul>
+    <img class="nav-avatar" src="https://i.pravatar.cc/100" alt="תמונת פרופיל" />
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <h1>🚨 פעולות חירום</h1>
+    <p>הכלב שלך אכל משהו מסוכן? פעל לפי השלבים הבאים מיד</p>
+  </div>
+
+  <div class="content-wrapper">
+
+    <!-- ALERT BANNER -->
+    <div class="alert-banner">
+      ⚠️ במקרה של חירום רפואי — אל תמתין, <a href="vets.html">פנה לוטרינר עכשיו</a>
+    </div>
+
+    <!-- STEPS -->
+    <div class="step-card">
+      <div class="step-number">1</div>
+      <div class="step-content">
+        <p class="step-title">הישאר רגוע וזהה את המאכל</p>
+        <p class="step-desc">נסה לזהות בדיוק מה הכלב אכל וכמה. שמור את האריזה אם יש — הוטרינר יצטרך את המידע הזה.</p>
+      </div>
+    </div>
+
+    <div class="step-card">
+      <div class="step-number">2</div>
+      <div class="step-content">
+        <p class="step-title">בדוק את מצב הכלב</p>
+        <p class="step-desc">חפש סימנים כמו: הקאות, רעידות, קושי בנשימה, חולשה קיצונית, או איבוד הכרה.</p>
+        <p class="step-warning">⚠️ אם יש אחד מהסימנים האלו — פנה לוטרינר מיידית ללא המתנה</p>
+      </div>
+    </div>
+
+    <div class="step-card">
+      <div class="step-number">3</div>
+      <div class="step-content">
+        <p class="step-title">אל תגרום להקאה ללא הנחיה</p>
+        <p class="step-desc">גרימת הקאה עלולה להחמיר את המצב במקרים מסוימים. עשה זאת רק אם הוטרינר הנחה אותך לכך.</p>
+      </div>
+    </div>
+
+    <div class="step-card">
+      <div class="step-number">4</div>
+      <div class="step-content">
+        <p class="step-title">אל תיתן מים או מזון</p>
+        <p class="step-desc">הימנע מלתת לכלב מים, מזון או כל חומר אחר עד לקבלת הנחיה מוטרינרית.</p>
+      </div>
+    </div>
+
+    <div class="step-card">
+      <div class="step-number">5</div>
+      <div class="step-content">
+        <p class="step-title">צור קשר עם וטרינר</p>
+        <p class="step-desc">ספר לוטרינר מה הכלב אכל, כמה, ומתי. הוא יתן לך הנחיות מדויקות לפי המצב.</p>
+      </div>
+    </div>
+
+
+
+    <!-- VETS LINK -->
+    <p class="vets-link">
+      רוצה למצוא וטרינר קרוב אליך? <a href="vets.html">לרשימת הוטרינרים</a>
+    </p>
+
+  </div>
+
+</body>
+</html>

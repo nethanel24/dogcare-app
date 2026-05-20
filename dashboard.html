@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard — DogCare</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+      background-color: #f4f6f4;
+      min-height: 100vh;
+    }
+
+    /* ===== NAVBAR ===== */
+    nav {
+  background: #ffffff;
+  border-bottom: 1px solid #dde5dd;
+  padding: 0.75rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-logo {
+  font-size: 16px;
+  font-weight: 600;
+  color: #4a7c59;
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+.nav-links a {
+  font-weight: 500;
+  font-size: 15px;
+  color: #5a6e5a;
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: #4a7c59;
+  font-weight: 600;
+}
+
+.nav-avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid #c8d5c8;
+  cursor: pointer;
+}
+
+    /* ===== PAGE HEADER ===== */
+    .page-header {
+      text-align: center;
+      padding: 2rem 1rem 1.5rem;
+    }
+
+    .page-header h1 {
+      font-size: 22px;
+      font-weight: 700;
+      color: #1e2d1e;
+      margin-bottom: 0.35rem;
+    }
+
+    .page-header p {
+      font-size: 13px;
+      color: #6b7c6b;
+    }
+
+    /* ===== CONTENT WRAPPER ===== */
+    .content-wrapper {
+      max-width: 950px;
+      margin: 0 auto;
+      padding: 0 1.5rem 3rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    /* ===== SECTION ===== */
+    .dashboard-section {
+      background: #ffffff;
+      border: 1px solid #dde5dd;
+      border-radius: 14px;
+      overflow: hidden;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 1.5rem;
+      border-bottom: 1px solid #dde5dd;
+      background: #f8faf8;
+    }
+
+    .section-header h2 {
+      font-size: 15px;
+      font-weight: 600;
+      color: #1e2d1e;
+    }
+
+    .add-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 13px;
+      color: #ffffff;
+      background: #4a7c59;
+      border: none;
+      border-radius: 8px;
+      padding: 7px 14px;
+      cursor: pointer;
+      font-family: inherit;
+      font-weight: 500;
+      text-decoration: none;
+      transition: background 0.15s;
+    }
+
+    .add-btn:hover {
+      background: #3d6b4a;
+    }
+
+    /* ===== TABLE ===== */
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .data-table thead tr {
+      background: #f4f6f4;
+    }
+
+    .data-table th {
+      font-size: 12px;
+      font-weight: 600;
+      color: #9aaa9a;
+      text-align: right;
+      padding: 0.65rem 1.5rem;
+      border-bottom: 1px solid #dde5dd;
+    }
+
+    .data-table td {
+      font-size: 13px;
+      color: #1e2d1e;
+      padding: 0.75rem 1.5rem;
+      border-bottom: 1px solid #f4f6f4;
+      vertical-align: middle;
+    }
+
+    .data-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .data-table tr:hover td {
+      background: #f8faf8;
+    }
+
+    /* ===== BADGES ===== */
+    .badge {
+      display: inline-block;
+      font-size: 11px;
+      padding: 2px 10px;
+      border-radius: 10px;
+      font-weight: 500;
+    }
+
+    .badge.allowed {
+      background: #eaf0ec;
+      color: #3d6b4a;
+    }
+
+    .badge.forbidden {
+      background: #fde8e8;
+      color: #a32d2d;
+    }
+
+    .badge.supplement {
+      background: #e8f0fe;
+      color: #1a56a0;
+    }
+
+    .badge.treat {
+      background: #fef3e2;
+      color: #8a5c00;
+    }
+
+    /* ===== ROW ACTIONS ===== */
+    .row-actions {
+      display: flex;
+      gap: 8px;
+      justify-content: flex-end;
+    }
+
+    .action-btn {
+      font-size: 12px;
+      padding: 4px 10px;
+      border-radius: 6px;
+      border: 1px solid #dde5dd;
+      background: #ffffff;
+      cursor: pointer;
+      font-family: inherit;
+      color: #5a6e5a;
+      text-decoration: none;
+      transition: border-color 0.15s;
+    }
+
+    .action-btn:hover {
+      border-color: #4a7c59;
+      color: #4a7c59;
+    }
+
+    .action-btn.delete {
+      color: #a32d2d;
+      border-color: #f5c6c6;
+    }
+
+    .action-btn.delete:hover {
+      background: #fff5f5;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <a href="index.html" class="nav-logo">🐾 DogCare</a>
+    <ul class="nav-links">
+      <li><a href="foods-allowed.html">מאכלים מותרים</a></li>
+      <li><a href="foods-forbidden.html">מאכלים אסורים</a></li>
+      <li><a href="supplements.html">חטיפים ותוספים</a></li>
+      <li><a href="vets.html">וטרינרים</a></li>
+      <li><a href="emergency.html">חירום</a></li>
+    </ul>
+    <img class="nav-avatar" src="https://i.pravatar.cc/100" alt="תמונת פרופיל" />
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <h1>⚙️ Dashboard</h1>
+    <p>ניהול תוכן האפליקציה — מאכלים, תוספים וטרינרים</p>
+  </div>
+
+  <div class="content-wrapper">
+
+    <!-- FOODS TABLE -->
+    <div class="dashboard-section">
+      <div class="section-header">
+        <h2>🥦 מאכלים</h2>
+        <button class="add-btn">+ הוסף מאכל</button>
+      </div>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>שם</th>
+            <th>קטגוריה</th>
+            <th>סטטוס</th>
+            <th>פעולות</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>🥕 גזר</td>
+            <td>ירק</td>
+            <td><span class="badge allowed">מותר</span></td>
+            <td>
+              <div class="row-actions">
+                <button class="action-btn">✏️ עריכה</button>
+                <button class="action-btn delete">🗑 מחיקה</button>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>🍎 תפוח</td>
+            <td>פרי</td>
+            <td><span class="badge allowed">מותר</span></td>
+            <td>
+              <div class="row-actions">
+                <button class="action-btn">✏️ עריכה</button>
+                <button class="action-btn delete">🗑 מחיקה</button>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>🍫 שוקולד</td>
+            <td>ממתק</td>
+            <td><span class="badge forbidden">אסור</span></td>
+            <td>
+              <div class="row-actions">
+                <button class="action-btn">✏️ עריכה</button>
+                <button class="action-btn delete">🗑 מחיקה</button>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>🧅 בצל</td>
+            <td>ירק</td>
+            <td><span class="badge forbidden">אסור</span></td>
+            <td>
+              <div class="row-actions">
+                <button class="action-btn">✏️ עריכה</button>
+                <button class="action-btn delete">🗑 מחיקה</button>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- SUPPLEMENTS TABLE -->
+    <div class="dashboard-section">
+      <div class="section-header">
+        <h2>🦴 חטיפים ותוספים</h2>
+        <button class="add-btn">+ הוסף חטיף / תוסף</button>
+      </div>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>שם</th>
+            <th>מותג</th>
+            <th>סוג</th>
+            <th>פעולות</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>🦴 Delissio Chicken Strips</td>
+            <td>Delissio</td>
+            <td><span class="badge treat">חטיף</span></td>
+            <td>
+              <div class="row-actions">
+                <button class="action-btn">✏️ עריכה</button>
+                <button class="action-btn delete">🗑 מחיקה</button>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>🐠 Nordic Naturals Omega-3</td>
+            <td>Nordic Naturals</td>
+            <td><span class="badge supplement">תוסף</span></td>
+            <td>
+              <div class="row-actions">
+                <button class="action-btn">✏️ עריכה</button>
+                <button class="action-btn delete">🗑 מחיקה</button>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>🌿 Purina FortiFlora</td>
+            <td>Purina</td>
+            <td><span class="badge supplement">תוסף</span></td>
+            <td>
+              <div class="row-actions">
+                <button class="action-btn">✏️ עריכה</button>
+                <button class="action-btn delete">🗑 מחיקה</button>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- VETS TABLE -->
+    <div class="dashboard-section">
+      <div class="section-header">
+        <h2>🏥 וטרינרים</h2>
+        <button class="add-btn">+ הוסף וטרינר</button>
+      </div>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>שם</th>
+            <th>כתובת</th>
+            <th>טלפון</th>
+            <th>פעולות</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>ד"ר כהן — מרפאת הכרמל</td>
+            <td>רחוב הכרמל 12, חיפה</td>
+            <td>04-1234567</td>
+            <td>
+              <div class="row-actions">
+                <button class="action-btn">✏️ עריכה</button>
+                <button class="action-btn delete">🗑 מחיקה</button>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>ד"ר לוי — בית חולים לבעלי חיים</td>
+            <td>רחוב הרצל 45, חיפה</td>
+            <td>04-2345678</td>
+            <td>
+              <div class="row-actions">
+                <button class="action-btn">✏️ עריכה</button>
+                <button class="action-btn delete">🗑 מחיקה</button>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>ד"ר גולן — מרפאת חיות המחמד</td>
+            <td>שדרות בן גוריון 8, חיפה</td>
+            <td>04-3456789</td>
+            <td>
+              <div class="row-actions">
+                <button class="action-btn">✏️ עריכה</button>
+                <button class="action-btn delete">🗑 מחיקה</button>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+</body>
+</html>

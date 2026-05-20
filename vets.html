@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>וטרינרים — DogCare</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+      background-color: #f4f6f4;
+      min-height: 100vh;
+    }
+
+    /* ===== NAVBAR ===== */
+    nav {
+  background: #ffffff;
+  border-bottom: 1px solid #dde5dd;
+  padding: 0.75rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-logo {
+  font-size: 16px;
+  font-weight: 600;
+  color: #4a7c59;
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+.nav-links a {
+  font-weight: 500;
+  font-size: 15px;
+  color: #5a6e5a;
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: #4a7c59;
+  font-weight: 600;
+}
+
+.nav-avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid #c8d5c8;
+  cursor: pointer;
+}
+
+    /* ===== PAGE HEADER ===== */
+    .page-header {
+      text-align: center;
+      padding: 2rem 1rem 1.5rem;
+    }
+
+    .page-header h1 {
+      font-size: 22px;
+      font-weight: 700;
+      color: #1e2d1e;
+      margin-bottom: 0.35rem;
+    }
+
+    .page-header p {
+      font-size: 13px;
+      color: #6b7c6b;
+    }
+
+    /* ===== CONTENT WRAPPER ===== */
+    .content-wrapper {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 1.5rem 3rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    /* ===== VET CARD ===== */
+    .vet-card {
+      background: #ffffff;
+      border: 1px solid #dde5dd;
+      border-radius: 12px;
+      padding: 1.25rem 1.5rem;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .vet-avatar {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: #eaf0ec;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      flex-shrink: 0;
+    }
+
+    .vet-info {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .vet-name {
+      font-size: 15px;
+      font-weight: 600;
+      color: #1e2d1e;
+    }
+
+    .vet-address {
+      font-size: 13px;
+      color: #6b7c6b;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .vet-phone {
+      font-size: 13px;
+      color: #4a7c59;
+      font-weight: 500;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .vet-phone:hover {
+      text-decoration: underline;
+    }
+
+    .vet-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      align-items: flex-end;
+    }
+
+    .maps-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 12px;
+      color: #1a56a0;
+      background: #e8f0fe;
+      border: none;
+      border-radius: 8px;
+      padding: 6px 12px;
+      text-decoration: none;
+      font-weight: 500;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .maps-btn:hover {
+      background: #d0e3fc;
+    }
+
+    .recommended-badge {
+      font-size: 11px;
+      background: #eaf0ec;
+      color: #3d6b4a;
+      padding: 3px 10px;
+      border-radius: 10px;
+      font-weight: 500;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <a href="index.html" class="nav-logo">🐾 DogCare</a>
+    <ul class="nav-links">
+      <li><a href="foods-allowed.html">מאכלים מותרים</a></li>
+      <li><a href="foods-forbidden.html">מאכלים אסורים</a></li>
+      <li><a href="supplements.html">חטיפים ותוספים</a></li>
+      <li><a href="vets.html" class="active">וטרינרים</a></li>
+      <li><a href="emergency.html">חירום</a></li>
+    </ul>
+    <img class="nav-avatar" src="https://i.pravatar.cc/100" alt="תמונת פרופיל" />
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <h1>🏥 וטרינרים מומלצים</h1>
+    <p>וטרינרים מומלצים באזורך — כתובת, טלפון וניווט ישיר</p>
+  </div>
+
+  <!-- VETS LIST -->
+  <div class="content-wrapper">
+
+    <div class="vet-card">
+      <div class="vet-avatar">🩺</div>
+      <div class="vet-info">
+        <p class="vet-name">ד"ר כהן — מרפאה וטרינרית הכרמל</p>
+        <p class="vet-address">📍 רחוב הכרמל 12, חיפה</p>
+        <a href="tel:04-1234567" class="vet-phone">📞 04-1234567</a>
+      </div>
+      <div class="vet-actions">
+        <span class="recommended-badge">⭐ מומלץ</span>
+        <a href="https://maps.google.com" target="_blank" class="maps-btn">🗺 פתח במפות</a>
+      </div>
+    </div>
+
+    <div class="vet-card">
+      <div class="vet-avatar">🩺</div>
+      <div class="vet-info">
+        <p class="vet-name">ד"ר לוי — בית חולים לבעלי חיים</p>
+        <p class="vet-address">📍 רחוב הרצל 45, חיפה</p>
+        <a href="tel:04-2345678" class="vet-phone">📞 04-2345678</a>
+      </div>
+      <div class="vet-actions">
+        <span class="recommended-badge">⭐ מומלץ</span>
+        <a href="https://maps.google.com" target="_blank" class="maps-btn">🗺 פתח במפות</a>
+      </div>
+    </div>
+
+    <div class="vet-card">
+      <div class="vet-avatar">🩺</div>
+      <div class="vet-info">
+        <p class="vet-name">ד"ר גולן — מרפאת חיות המחמד</p>
+        <p class="vet-address">📍 שדרות בן גוריון 8, חיפה</p>
+        <a href="tel:04-3456789" class="vet-phone">📞 04-3456789</a>
+      </div>
+      <div class="vet-actions">
+        <a href="https://maps.google.com" target="_blank" class="maps-btn">🗺 פתח במפות</a>
+      </div>
+    </div>
+
+    <div class="vet-card">
+      <div class="vet-avatar">🩺</div>
+      <div class="vet-info">
+        <p class="vet-name">ד"ר אברהם — מרפאה 24 שעות</p>
+        <p class="vet-address">📍 רחוב יפו 3, חיפה</p>
+        <a href="tel:04-4567890" class="vet-phone">📞 04-4567890</a>
+      </div>
+      <div class="vet-actions">
+        <span class="recommended-badge">⭐ מומלץ</span>
+        <a href="https://maps.google.com" target="_blank" class="maps-btn">🗺 פתח במפות</a>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>

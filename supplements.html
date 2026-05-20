@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>חטיפים ותוספי תזונה — DogCare</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+      background-color: #f4f6f4;
+      min-height: 100vh;
+    }
+
+    /* ===== NAVBAR ===== */
+    nav {
+  background: #ffffff;
+  border-bottom: 1px solid #dde5dd;
+  padding: 0.75rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-logo {
+  font-size: 16px;
+  font-weight: 600;
+  color: #4a7c59;
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+.nav-links a {
+  font-weight: 500;
+  font-size: 15px;
+  color: #5a6e5a;
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: #4a7c59;
+  font-weight: 600;
+}
+
+.nav-avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid #c8d5c8;
+  cursor: pointer;
+}
+
+    /* ===== PAGE HEADER ===== */
+    .page-header {
+      text-align: center;
+      padding: 2rem 1rem 1.5rem;
+    }
+
+    .page-header h1 {
+      font-size: 22px;
+      font-weight: 700;
+      color: #1e2d1e;
+      margin-bottom: 0.35rem;
+    }
+
+    .page-header p {
+      font-size: 13px;
+      color: #6b7c6b;
+    }
+
+    /* ===== CONTENT WRAPPER ===== */
+    .content-wrapper {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 1.5rem 3rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    /* ===== SECTION TITLE ===== */
+    .section-title {
+      font-size: 16px;
+      font-weight: 600;
+      color: #1e2d1e;
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid #eaf0ec;
+    }
+
+    /* ===== CARDS GRID ===== */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 12px;
+    }
+
+    .rec-card {
+      background: #ffffff;
+      border: 1px solid #dde5dd;
+      border-radius: 12px;
+      padding: 1.25rem 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .rec-card .card-icon {
+      font-size: 28px;
+    }
+
+    .rec-card .card-name {
+      font-size: 14px;
+      font-weight: 600;
+      color: #1e2d1e;
+    }
+
+    .rec-card .card-brand {
+      font-size: 12px;
+      color: #9aaa9a;
+    }
+
+    .rec-card .card-desc {
+      font-size: 12px;
+      color: #6b7c6b;
+      line-height: 1.5;
+    }
+
+    .rec-card .card-badge {
+      display: inline-block;
+      font-size: 11px;
+      padding: 2px 10px;
+      border-radius: 10px;
+      font-weight: 500;
+      align-self: flex-start;
+    }
+
+    .card-badge.supplement {
+      background: #e8f0fe;
+      color: #1a56a0;
+    }
+
+    .card-badge.treat {
+      background: #fef3e2;
+      color: #8a5c00;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <a href="index.html" class="nav-logo">🐾 DogCare</a>
+    <ul class="nav-links">
+      <li><a href="foods-allowed.html">מאכלים מותרים</a></li>
+      <li><a href="foods-forbidden.html">מאכלים אסורים</a></li>
+      <li><a href="supplements.html" class="active">חטיפים ותוספים</a></li>
+      <li><a href="vets.html">וטרינרים</a></li>
+      <li><a href="emergency.html">חירום</a></li>
+    </ul>
+    <img class="nav-avatar" src="https://i.pravatar.cc/100" alt="תמונת פרופיל" />
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <h1>🦴 חטיפים ותוספי תזונה</h1>
+    <p>חטיפים מזינים ותוספי תזונה מומלצים לכלב בריא ומאושר</p>
+  </div>
+
+  <div class="content-wrapper">
+
+    <!-- TREATS -->
+    <div>
+      <h2 class="section-title">🍬 חטיפים מזינים</h2>
+      <div class="cards-grid">
+
+        <div class="rec-card">
+          <span class="card-icon">🦴</span>
+          <p class="card-name">Delissio Chicken Strips</p>
+          <p class="card-brand">Delissio</p>
+          <p class="card-desc">חטיף עוף טבעי, ללא חומרים משמרים. מצוין כגמול לאימון.</p>
+          <span class="card-badge treat">חטיף</span>
+        </div>
+
+        <div class="rec-card">
+          <span class="card-icon">🥩</span>
+          <p class="card-name">Pedigree Dentastix</p>
+          <p class="card-brand">Pedigree</p>
+          <p class="card-desc">חטיף לעיסה לניקוי שיניים ומניעת אבנית. מומלץ פעם ביום.</p>
+          <span class="card-badge treat">חטיף</span>
+        </div>
+
+        <div class="rec-card">
+          <span class="card-icon">🐟</span>
+          <p class="card-name">Zuke's Mini Naturals</p>
+          <p class="card-brand">Zuke's</p>
+          <p class="card-desc">חטיפים קטנים בטעם סלמון, דלי קלוריות ומתאימים לאימון.</p>
+          <span class="card-badge treat">חטיף</span>
+        </div>
+
+        <div class="rec-card">
+          <span class="card-icon">🥕</span>
+          <p class="card-name">Wellness Soft WellBites</p>
+          <p class="card-brand">Wellness</p>
+          <p class="card-desc">חטיפים רכים עם ירקות טבעיים, ללא גלוטן וללא צבעי מאכל.</p>
+          <span class="card-badge treat">חטיף</span>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- SUPPLEMENTS -->
+    <div>
+      <h2 class="section-title">💊 תוספי תזונה מומלצים</h2>
+      <div class="cards-grid">
+
+        <div class="rec-card">
+          <span class="card-icon">🐠</span>
+          <p class="card-name">Nordic Naturals Omega-3</p>
+          <p class="card-brand">Nordic Naturals</p>
+          <p class="card-desc">תוסף אומגה 3 איכותי לבריאות הפרווה, העור והמפרקים.</p>
+          <span class="card-badge supplement">תוסף</span>
+        </div>
+
+        <div class="rec-card">
+          <span class="card-icon">🦴</span>
+          <p class="card-name">Cosequin DS Glucosamine</p>
+          <p class="card-brand">Cosequin</p>
+          <p class="card-desc">תוסף גלוקוזמין לתמיכה במפרקים, מומלץ לכלבים מבוגרים.</p>
+          <span class="card-badge supplement">תוסף</span>
+        </div>
+
+        <div class="rec-card">
+          <span class="card-icon">🌿</span>
+          <p class="card-name">Purina FortiFlora</p>
+          <p class="card-brand">Purina</p>
+          <p class="card-desc">פרוביוטיקה מומלצת על ידי וטרינרים לאיזון מערכת העיכול.</p>
+          <span class="card-badge supplement">תוסף</span>
+        </div>
+
+        <div class="rec-card">
+          <span class="card-icon">☀️</span>
+          <p class="card-name">VetriScience Canine Plus</p>
+          <p class="card-brand">VetriScience</p>
+          <p class="card-desc">מולטי ויטמין יומי הכולל ויטמינים ומינרלים חיוניים לכלב.</p>
+          <span class="card-badge supplement">תוסף</span>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- VET NOTE -->
+    <div style="background:#fff5f5; border:1px solid #f5c6c6; border-radius:10px; padding:0.9rem 1rem; font-size:13px; color:#a32d2d; text-align:center;">
+      ⚠️ לפני מתן תוספי תזונה — מומלץ להתייעץ עם הוטרינר שלך
+    </div>
+
+  </div>
+
+</body>
+</html>
